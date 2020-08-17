@@ -15,7 +15,7 @@ import SidebarFootItem from '../sidebarFootItem';
 // STYLES & UTILS ─────────────────────────────────────────────────
 import { CharIcon, LocationIcon, EpisodesIcon } from '../../icons/Icons';
 import Space from '../space';
-import 'react-pro-sidebar/dist/css/styles.css';
+import '../sidebar/styles.css';
 import './Filter.css';
 
 export default function Filter() {
@@ -35,7 +35,9 @@ export default function Filter() {
             onClick={() => setHidden(!hidden)}
           />
           <Space />
-          <MenuItem icon={<CharIcon />}>Characters</MenuItem>
+          <MenuItem active icon={<CharIcon />}>
+            Characters
+          </MenuItem>
           <MenuItem icon={<LocationIcon />}>Locations</MenuItem>
           <MenuItem icon={<EpisodesIcon />}>Episodes</MenuItem>
         </Menu>

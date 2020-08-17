@@ -3,7 +3,7 @@ import React from 'react';
 
 // STYLES & UTILS ─────────────────────────────────────────────────
 import { MenuIcon } from '../../icons/Icons';
-import 'react-pro-sidebar/dist/css/styles.css';
+import '../sidebar/styles.css';
 import './SidebarHeadItem.css';
 
 interface Props {
