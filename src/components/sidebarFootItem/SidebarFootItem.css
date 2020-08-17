@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.bg-icon {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 130px;
+  border-radius: 50px;
+  background-color: rgba(255, 115, 0, 0.123);
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration-color: none;
+  text-decoration-line: none;
+  color: rgb(158, 158, 158);
+}
+
+.bg-icon h6 {
+  font-weight: lighter;
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.icon {
+  padding-left: 6px;
+  padding-bottom: 2px;
+  color: rgb(255, 81, 0);
+}
+
+.bg-icon:hover {
+  background-color: rgba(255, 115, 0, 0.37);
+  color: rgb(255, 81, 0);
+  cursor: pointer;
+}
