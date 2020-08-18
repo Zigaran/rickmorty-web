@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+import './home.css';
 import { Searcher, Filter } from '../../components';
 
 let Home = () => {
@@ -7,6 +7,7 @@ let Home = () => {
     <div className="home">
       <Filter />
       <div className="home-content">
+        <h4 style={{ color: 'white' }}>ASDASDASD</h4>
         <Searcher />
       </div>
     </div>

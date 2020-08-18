@@ -4,7 +4,7 @@ import React from 'react';
 // STYLES & UTILS ─────────────────────────────────────────────────
 import { MenuIcon } from '../../icons/Icons';
 import '../../styles/sidebar/styles.css';
-import './SidebarHeadItem.css';
+import './sidebarHeadItem.css';
 
 interface Props {
   onClick: () => void;

@@ -1,14 +1,5 @@
 import React from 'react';
 import './searcher.scss';
-// import { SearchIcon } from '../../icons/Icons';
-
-// .addEventListener('click', ({ e }: any) => {
-//   e.stopPropagation();
-//   e.preventDefault();
-
-//   document.querySelector('.input-container').blur();
-// });
-// }
 
 interface Props {
   e?: any;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { PuzzleIcon } from '../../icons/Icons';
-import './SidebarFootItem.css';
+import './sidebarFootItem.css';
 
 interface Props {
   text?: string;

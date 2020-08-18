@@ -16,7 +16,7 @@ import SidebarFootItem from '../sidebarFootItem';
 import { CharIcon, LocationIcon, EpisodesIcon } from '../../icons/Icons';
 import Space from '../space';
 import '../../styles/sidebar/styles.css';
-import './Filter.css';
+import './filter.css';
 
 export default function Filter() {
   const [hidden, setHidden] = useState(true);
@@ -27,6 +27,7 @@ export default function Filter() {
       image="https://wallpaperaccess.com/full/795172.jpg"
       collapsed={hidden}
       className="flex"
+      breakPoint="md"
     >
       <SidebarContent>
         <Menu iconShape="circle">

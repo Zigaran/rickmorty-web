@@ -1,5 +1,5 @@
 import React from 'react';
-import './Space.css';
+import './space.css';
 
 let Space = () => {
   return <div className="space"></div>;
