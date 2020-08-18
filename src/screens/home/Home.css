@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+}
+
+.home-content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}

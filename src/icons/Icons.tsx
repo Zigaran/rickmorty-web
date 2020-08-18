@@ -27,3 +27,7 @@ export let EpisodesIcon = () => {
 export let PuzzleIcon = ({ className }: Props) => {
   return <i className={`fas fa-puzzle-piece fa-xl ${className}`} />;
 };
+
+export let SearchIcon = () => {
+  return <i className="fas fa-search" />;
+};
