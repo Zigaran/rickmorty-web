@@ -2,7 +2,10 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: grey;
+  background: url('../../utils/backgrounds/home-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-content {

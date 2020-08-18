@@ -1,0 +1,189 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Catamaran', sans-serif;
+}
+
+body {
+  --height: 50;
+  --width: 300;
+  --border: 5;
+  --speed: 0.4;
+  --ease: cubic-bezier(0.85, 0.01, 0.4, 0.97);
+  --color-bk: transparent; //#547AA5;
+
+  background: var(--color-bk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition-property: background;
+  transition-duration: calc(var(--speed) * 1s);
+  transition-timing-function: var(--ease);
+
+  &:focus-within {
+    --speed: 0.2;
+    background-color: #63c0e800; //#456488;
+  }
+}
+
+::placeholder {
+  color: rgba(white, 0.3);
+  text-shadow: 0px 0px 0px rgba(145, 255, 0, 0) !important;
+  font-weight: lighter;
+  font-size: 17px;
+}
+:-ms-input-placeholder {
+  color: rgba(white, 0.3);
+  text-shadow: 0px 0px 0px rgba(145, 255, 0, 0) !important;
+  font-weight: lighter;
+  font-size: 17px;
+}
+::-ms-input-placeholder {
+  color: rgba(white, 0.3);
+  text-shadow: 0px 0px 0px rgba(145, 255, 0, 0) !important;
+  font-weight: lighter;
+  font-size: 17px;
+}
+
+.input-container {
+  margin-top: 50px;
+  width: calc(var(--width) * 1px);
+  height: calc(var(--height) * 1px);
+  position: relative;
+  cursor: pointer;
+  transform: rotate(12deg) scale(0.7);
+
+  transition-property: opacity, transform;
+  transition-duration: calc(var(--speed) * 1s);
+  transition-timing-function: var(--ease);
+  //CENTRO DEL BUSCADOR CUANDO ES DESPLEGADO
+  .center {
+    border: calc(var(--border) * 0.5px) solid rgb(60, 255, 0);
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height: calc(100% - var(--border) * 2px);
+    transform: scalex(0);
+    transition: inherit;
+    background-color: var(--color-bk);
+  }
+
+  input {
+    transition: inherit;
+    width: calc(100% - var(--height));
+    height: 100%;
+    border: 0;
+    outline: 0;
+    color: rgb(94, 255, 0);
+    text-shadow: 0px 0px 3px rgb(123, 255, 0);
+    background: transparent;
+    font-size: 17px;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 10px 50px 0px rgba(94, 255, 0, 0.144);
+    transition: inherit;
+    transform: scalex(0) translateY(-10px);
+    opacity: 0;
+  }
+
+  &:after,
+  &:before {
+    z-index: 1;
+    content: '';
+    transition: inherit;
+    width: calc((var(--height) * 0.5px) - (var(--border) * 1px));
+    height: calc((var(--height) * 1px) - (var(--border) * 2px));
+    display: block;
+    top: 0;
+    border-color: rgb(60, 255, 0);
+    position: absolute;
+    background-color: var(--color-bk);
+    //BORDES LATERALES DEL BUSCADOR
+    border: calc(var(--border) * 0.5px) solid rgb(60, 255, 0);
+  }
+
+  &:before {
+    right: 100%;
+    border-radius: 2em 0 0 2em;
+    border-right: none;
+    transform: translateX(calc(var(--width) * 0.5px));
+  }
+
+  &:after {
+    left: 100%;
+    border-radius: 0 2em 2em 0;
+    border-left: none;
+    transform: translateX(calc(var(--width) * -0.5px));
+  }
+
+  .sticks {
+    position: absolute;
+    height: calc(var(--height) * 0.5px);
+    width: 1px;
+    bottom: 0;
+    right: 0;
+    transition: inherit;
+    transition-duration: calc(var(--speed) * 1.25s);
+    transform: translateX(calc((var(--width) - var(--height)) * -0.53px))
+      rotate(-45deg);
+    z-index: 2;
+    // PATITA DE LA LUPA Y 'X' PARA CERRAR EL BUSCADOR
+    &:before,
+    &:after {
+      transition: transform calc(var(--speed) * 1s) var(--ease);
+      height: calc(var(--height) * 0.5px);
+      width: calc(var(--border) * 0.8px);
+      position: absolute;
+      content: '';
+      background-color: rgb(60, 255, 0);
+      left: calc(var(--border) * -0.5px);
+      bottom: calc(var(--height) * -0.25px);
+    }
+  }
+
+  &:focus-within {
+    transform: rotate(0deg) translatey(-10px);
+    .center {
+      transform: scalex(1);
+    }
+    .shadow {
+      transform: scalex(1) translateY(0px);
+      opacity: 1;
+    }
+    input {
+      opacity: 1;
+    }
+    &:before {
+      transform: translateX(0);
+    }
+    &:after {
+      transform: translateX(0);
+    }
+
+    .sticks {
+      transition-duration: calc(var(--speed) * 1s);
+      transform: translateX(calc(var(--height) * -0.1px)) translateY(0)
+        rotate(180deg);
+      &:before {
+        transform: rotate(-45deg);
+      }
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
