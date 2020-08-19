@@ -18,8 +18,20 @@ import Space from '../space';
 import '../../styles/sidebar/styles.css';
 import './filter.css';
 
-export default function Filter() {
-  const [hidden, setHidden] = useState(true);
+interface Props {
+  active?: boolean;
+}
+
+export default function Filter({ active }: Props) {
+  let [hidden, setHidden] = useState(false);
+  let [toggled, setToggle] = useState(false);
+
+  let widthToClose = () => {
+    const w = window.innerWidth;
+    return w < 769
+      ? (console.log('menor'), setHidden(false), setToggle(!toggled))
+      : (console.log('mayor'), setHidden(!hidden));
+  };
 
   return (
     <ProSidebar
@@ -28,13 +40,11 @@ export default function Filter() {
       collapsed={hidden}
       className="flex"
       breakPoint="md"
+      toggled={toggled ? !toggled : active}
     >
       <SidebarContent>
         <Menu iconShape="circle">
-          <SidebarHeadItem
-            text="Menu Filter"
-            onClick={() => setHidden(!hidden)}
-          />
+          <SidebarHeadItem text="Menu Filter" onClick={() => widthToClose()} />
           <Space />
           <MenuItem icon={<CharIcon />}>Characters</MenuItem>
           <MenuItem icon={<LocationIcon />}>Locations</MenuItem>

@@ -7,7 +7,7 @@ interface Props {
 
 class Searcher extends React.Component<Props> {
   componentDidMount() {
-    document.getElementById('pedo')?.addEventListener('click', (e) => {
+    document.getElementById('searcher')?.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
     });
@@ -24,7 +24,7 @@ class Searcher extends React.Component<Props> {
             placeholder="Search characters/locations"
           />
         </div>
-        <div className="sticks" id="pedo"></div>
+        <div className="sticks" id="searcher"></div>
       </label>
     );
   }

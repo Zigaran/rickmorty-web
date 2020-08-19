@@ -3,12 +3,12 @@ import './menuButton.css';
 import { MenuIcon } from '../../icons/Icons';
 
 interface Props {
-  onClick: void;
+  onClick?: () => void;
 }
 
 let MenuButton = ({ onClick }: Props) => {
   return (
-    <div className="" onClick={() => onClick}>
+    <div className="button-container" onClick={onClick}>
       <MenuIcon />
     </div>
   );

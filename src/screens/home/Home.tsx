@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './home.css';
-import { Searcher, Filter } from '../../components';
+import { Searcher, Filter, MenuButton } from '../../components';
 
 let Home = () => {
+  let [active, setActive] = useState(false);
   return (
     <div className="home">
-      <Filter />
+      <Filter active={active} />
       <div className="home-content">
-        <h4 style={{ color: 'white' }}>ASDASDASD</h4>
+        <MenuButton
+          onClick={() => {
+            setActive(!active);
+            console.log(active);
+          }}
+        />
         <Searcher />
       </div>
     </div>
