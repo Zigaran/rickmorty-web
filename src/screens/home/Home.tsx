@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './home.css';
 import { Searcher, Filter, MenuButton } from '../../components';
+import { connect } from 'react-redux';
+import { changeToggledStatus } from '../../redux/sidebarDuck';
 
-let Home = () => {
-  let [active, setActive] = useState(false);
+interface Props {
+  changeToggledStatus?: any;
+}
+
+let Home = ({ changeToggledStatus }: Props) => {
   return (
     <div className="home">
-      <Filter active={active} />
+      <Filter />
       <div className="home-content">
-        <MenuButton
-          onClick={() => {
-            setActive(!active);
-            console.log(active);
-          }}
-        />
+        <MenuButton onClick={() => changeToggledStatus()} />
         <Searcher />
       </div>
     </div>
   );
 };
 
-export default Home;
+function mapState(state: any) {
+  return {};
+}
+
+export default connect(mapState, { changeToggledStatus })(Home);

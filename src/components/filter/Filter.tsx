@@ -1,5 +1,9 @@
 // REACT ──────────────────────────────────────────────────────────
-import React, { useState } from 'react';
+import React from 'react';
+
+// REDUX ──────────────────────────────────────────────────────────
+import { connect } from 'react-redux';
+import { changeHiddenStatus } from '../../redux/sidebarDuck';
 
 // SIDEBAR FILTER ─────────────────────────────────────────────────
 import {
@@ -13,38 +17,40 @@ import SidebarHeadItem from '../sidebarHeadItem';
 import SidebarFootItem from '../sidebarFootItem';
 
 // STYLES & UTILS ─────────────────────────────────────────────────
-import { CharIcon, LocationIcon, EpisodesIcon } from '../../icons/Icons';
+import { CharIcon, LocationIcon, EpisodesIcon } from '../../utils/icons/Icons';
 import Space from '../space';
-import '../../styles/sidebar/styles.css';
+import '../../utils/styles/sidebar/styles.css';
 import './filter.css';
 
 interface Props {
-  active?: boolean;
+  hiddenStatus?: any;
+  toggledStatus?: any;
+  changeHiddenStatus?: any;
 }
 
-export default function Filter({ active }: Props) {
-  let [hidden, setHidden] = useState(false);
-  let [toggled, setToggle] = useState(false);
+function Filter({ hiddenStatus, toggledStatus, changeHiddenStatus }: Props) {
+  // let sidebarResponsiveToggle = () => {
+  //   let w = window.innerWidth;
+  //   console.log(w);
+  //   return w < 769 ? () => changeToggledStatus() : () => changeHiddenStatus();
+  // };
 
-  let widthToClose = () => {
-    const w = window.innerWidth;
-    return w < 769
-      ? (console.log('menor'), setHidden(false), setToggle(!toggled))
-      : (console.log('mayor'), setHidden(!hidden));
-  };
-
+  const w = window.innerWidth;
   return (
     <ProSidebar
       width={30}
       image="https://wallpaperaccess.com/full/795172.jpg"
-      collapsed={hidden}
+      collapsed={hiddenStatus}
       className="flex"
       breakPoint="md"
-      toggled={toggled ? !toggled : active}
+      toggled={toggledStatus}
     >
       <SidebarContent>
         <Menu iconShape="circle">
-          <SidebarHeadItem text="Menu Filter" onClick={() => widthToClose()} />
+          <SidebarHeadItem
+            text="Menu Filter"
+            onClick={() => changeHiddenStatus(w)}
+          />
           <Space />
           <MenuItem icon={<CharIcon />}>Characters</MenuItem>
           <MenuItem icon={<LocationIcon />}>Locations</MenuItem>
@@ -57,3 +63,12 @@ export default function Filter({ active }: Props) {
     </ProSidebar>
   );
 }
+
+function mapState(state: any) {
+  return {
+    hiddenStatus: state.sidebarStatuses.hidden,
+    toggledStatus: state.sidebarStatuses.toggled,
+  };
+}
+
+export default connect(mapState, { changeHiddenStatus })(Filter);

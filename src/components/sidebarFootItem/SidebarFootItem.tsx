@@ -1,5 +1,5 @@
 import React from 'react';
-import { PuzzleIcon } from '../../icons/Icons';
+import { PuzzleIcon } from '../../utils/icons/Icons';
 import './sidebarFootItem.css';
 
 interface Props {
