@@ -16,13 +16,7 @@
 }
 
 .button-container:hover {
-  background-color: rgba(173, 173, 173, 0.425);
-  color: rgb(204, 204, 204);
-}
-
-.button-container:active {
-  background-color: rgba(173, 173, 173, 0.425);
-  color: rgb(204, 204, 204);
+  color: #6bc900;
 }
 
 @media all and (min-width: 769px) {

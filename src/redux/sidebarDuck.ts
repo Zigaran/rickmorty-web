@@ -56,3 +56,10 @@ export let changeToggledStatus = () => (dispatch: any, getState: any) => {
     payload: !toggled,
   });
 };
+
+export let activeSidebar = () => (dispatch: any, getState: any) => {
+  dispatch({
+    type: CHANGE_SIDEBAR_HIDDEN_STATUS,
+    payload: false,
+  });
+};

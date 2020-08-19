@@ -1,9 +1,9 @@
 // REACT ──────────────────────────────────────────────────────────
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
-import { changeHiddenStatus } from '../../redux/sidebarDuck';
+import { activeSidebar, changeHiddenStatus } from '../../redux/sidebarDuck';
 
 // SIDEBAR FILTER ─────────────────────────────────────────────────
 import {
@@ -26,16 +26,27 @@ interface Props {
   hiddenStatus?: any;
   toggledStatus?: any;
   changeHiddenStatus?: any;
+  activeSidebar?: any;
 }
 
-function Filter({ hiddenStatus, toggledStatus, changeHiddenStatus }: Props) {
-  // let sidebarResponsiveToggle = () => {
-  //   let w = window.innerWidth;
-  //   console.log(w);
-  //   return w < 769 ? () => changeToggledStatus() : () => changeHiddenStatus();
-  // };
+function Filter({
+  hiddenStatus,
+  toggledStatus,
+  activeSidebar,
+  changeHiddenStatus,
+}: Props) {
+  const [width, setWidth] = useState(window.innerWidth);
 
-  const w = window.innerWidth;
+  useEffect(() => {
+    window.addEventListener('resize', resizeSidebar);
+  });
+
+  let resizeSidebar = () => {
+    let w = window.innerWidth;
+    setWidth(w);
+    return w < 769 ? activeSidebar() : null;
+  };
+
   return (
     <ProSidebar
       width={30}
@@ -49,7 +60,7 @@ function Filter({ hiddenStatus, toggledStatus, changeHiddenStatus }: Props) {
         <Menu iconShape="circle">
           <SidebarHeadItem
             text="Menu Filter"
-            onClick={() => changeHiddenStatus(w)}
+            onClick={() => changeHiddenStatus(width)}
           />
           <Space />
           <MenuItem icon={<CharIcon />}>Characters</MenuItem>
@@ -71,4 +82,4 @@ function mapState(state: any) {
   };
 }
 
-export default connect(mapState, { changeHiddenStatus })(Filter);
+export default connect(mapState, { changeHiddenStatus, activeSidebar })(Filter);
