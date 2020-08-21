@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/rickmorty-web/static/css/main.31a3adef.chunk.css",
-    "main.js": "/rickmorty-web/static/js/main.af08abb8.chunk.js",
-    "main.js.map": "/rickmorty-web/static/js/main.af08abb8.chunk.js.map",
+    "main.js": "/rickmorty-web/static/js/main.dfdf6d46.chunk.js",
+    "main.js.map": "/rickmorty-web/static/js/main.dfdf6d46.chunk.js.map",
     "runtime-main.js": "/rickmorty-web/static/js/runtime-main.55b32f20.js",
     "runtime-main.js.map": "/rickmorty-web/static/js/runtime-main.55b32f20.js.map",
     "static/js/2.7bed642c.chunk.js": "/rickmorty-web/static/js/2.7bed642c.chunk.js",
     "static/js/2.7bed642c.chunk.js.map": "/rickmorty-web/static/js/2.7bed642c.chunk.js.map",
     "index.html": "/rickmorty-web/index.html",
-    "precache-manifest.b78508832719efdc632d6dfa15e2eb3e.js": "/rickmorty-web/precache-manifest.b78508832719efdc632d6dfa15e2eb3e.js",
+    "precache-manifest.f45f662a58fe6eeeaf2900a6a2bf875f.js": "/rickmorty-web/precache-manifest.f45f662a58fe6eeeaf2900a6a2bf875f.js",
     "service-worker.js": "/rickmorty-web/service-worker.js",
     "static/css/main.31a3adef.chunk.css.map": "/rickmorty-web/static/css/main.31a3adef.chunk.css.map",
     "static/js/2.7bed642c.chunk.js.LICENSE.txt": "/rickmorty-web/static/js/2.7bed642c.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.55b32f20.js",
     "static/js/2.7bed642c.chunk.js",
     "static/css/main.31a3adef.chunk.css",
-    "static/js/main.af08abb8.chunk.js"
+    "static/js/main.dfdf6d46.chunk.js"
   ]
 }
