@@ -7,17 +7,27 @@ interface Props {
 }
 
 class Searcher extends React.Component<Props> {
+  stillOnFocus() {
+    let element = document.getElementById('searcher');
+    element?.focus();
+  }
+
   render() {
     return (
       <label id="searcher" className="input-container trolo">
         <div className="shadow" />
         <div className="center">
           <input
+            id="intext"
             type="text"
             className="input"
             placeholder="Search characters/locations"
           />
-          <div id="switch" style={{ paddingLeft: '4px' }}>
+          <div
+            onClick={this.stillOnFocus}
+            id="switch"
+            style={{ paddingLeft: '4px' }}
+          >
             <SwitchFilter />
           </div>
         </div>
