@@ -23,11 +23,7 @@ class Searcher extends React.Component<Props> {
             className="input"
             placeholder="Search characters/locations"
           />
-          <div
-            onClick={this.stillOnFocus}
-            id="switch"
-            style={{ paddingLeft: '4px' }}
-          >
+          <div className="align" onClick={this.stillOnFocus}>
             <SwitchFilter />
           </div>
         </div>
