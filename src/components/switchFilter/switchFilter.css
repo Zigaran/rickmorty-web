@@ -7,8 +7,6 @@
   right: -5%;
 }
 
-/* a height le saque 3 pixeles */
-
 .switch input {
   display: none;
 }
@@ -24,8 +22,13 @@
   background-color: rgba(102, 255, 0, 0.753);
   box-shadow: 0px 8px 30px 0px rgba(94, 255, 0, 0.205);
   -webkit-transition: 0.4s;
-  transition: 0.4s;
+  transition: 1s;
   border-radius: 34px;
+}
+
+.slider:active {
+  box-shadow: 0px 10px 100px 0px rgb(98, 0, 255);
+  transition: 0ms;
 }
 
 .slider:before {
@@ -44,6 +47,7 @@
 input:checked + .slider {
   background-color: rgba(98, 0, 255, 0.76);
   box-shadow: 0px 10px 50px 0px rgba(98, 0, 255, 0.247);
+  transition: 1s;
 }
 
 input:focus + .slider {
@@ -56,11 +60,16 @@ input:checked + .slider:before {
   transform: translateX(55px);
 }
 
+input:checked + .slider:active {
+  box-shadow: 0px 10px 100px 0px rgba(94, 255, 0, 0.425);
+  transition: 0ms;
+}
+
 /*------ ADDED CSS ---------*/
 .slider:after {
   z-index: -1;
   position: relative;
-  content: 'Sabri';
+  content: 'NAME';
   color: rgb(255, 255, 255);
   display: block;
   position: absolute;
@@ -72,5 +81,5 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider:after {
-  content: 'TeAmo';
+  content: 'TYPE';
 }
