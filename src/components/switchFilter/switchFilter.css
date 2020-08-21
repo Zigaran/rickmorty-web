@@ -1,9 +1,10 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 90px;
-  height: 31px;
-  top: 2px;
+  width: 6.6vw;
+  height: 5vh;
+  top: 4px;
+  /* margin-top: 3%; */
 }
 
 .switch input {
@@ -52,7 +53,7 @@ input:checked + .slider:before {
 
 /*------ ADDED CSS ---------*/
 .slider:after {
-  content: 'NAME';
+  content: 'NAM';
   color: white;
   display: block;
   position: absolute;
