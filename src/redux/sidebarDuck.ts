@@ -2,18 +2,6 @@
 let CHANGE_SIDEBAR_TOGGLED_STATUS = 'SIDEBAR_TOGGLE_STATUS';
 let CHANGE_SIDEBAR_HIDDEN_STATUS = 'SIDEBAR_HIDDEN_STATUS';
 
-interface hiddeStatusType {
-  type: typeof CHANGE_SIDEBAR_HIDDEN_STATUS;
-  payload: boolean;
-}
-
-interface toggleStatusType {
-  type: typeof CHANGE_SIDEBAR_HIDDEN_STATUS;
-  payload: boolean;
-}
-
-type actionTypes = toggleStatusType | hiddeStatusType;
-
 let sidebarStatuses = {
   toggled: false,
   hidden: false,

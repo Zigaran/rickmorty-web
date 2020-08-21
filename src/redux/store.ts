@@ -4,6 +4,8 @@ import thunk from 'redux-thunk';
 
 // REDUCERS
 import sidebarReducer from './sidebarDuck';
+import charsReducer, { getCharacterAction } from './charsDuck';
+import menuReducer from './menuDuck';
 
 declare global {
   interface Window {
@@ -14,6 +16,8 @@ declare global {
 // Es la raiz que contiene y combina todos los reducers
 let rootReducer = combineReducers({
   sidebarStatuses: sidebarReducer,
+  characters: charsReducer,
+  menuFilter: menuReducer,
 });
 
 // --- composeEnhacers ---
@@ -36,5 +40,6 @@ export default function generateStore() {
     rootReducer,
     composeEnhancers(applyMiddleware(thunk))
   );
+  getCharacterAction()(store.dispatch, store.getState);
   return store;
 }

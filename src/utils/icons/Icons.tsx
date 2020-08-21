@@ -1,9 +1,6 @@
 // REACT ──────────────────────────────────────────────────────────
 import React from 'react';
 
-// STYLES ─────────────────────────────────────────────────────────
-import './styles.css';
-
 interface Props {
   className?: string;
 }
@@ -17,7 +14,7 @@ export let CharIcon = () => {
 };
 
 export let LocationIcon = () => {
-  return <i className="fas fa-map-marker-alt fa-2x" />;
+  return <i className="fas fa-rocket fa-2x" />;
 };
 
 export let EpisodesIcon = () => {
@@ -30,4 +27,8 @@ export let PuzzleIcon = ({ className }: Props) => {
 
 export let SearchIcon = () => {
   return <i className="fas fa-search" />;
+};
+
+export let CircleIcon = () => {
+  return <i className="fas fa-circle" style={{ fontSize: '8px' }} />;
 };

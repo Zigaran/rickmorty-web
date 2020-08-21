@@ -61,6 +61,10 @@ body {
   transition-timing-function: var(--ease);
   //CENTRO DEL BUSCADOR CUANDO ES DESPLEGADO
   .center {
+    // EDIT
+    display: flex;
+    flex-direction: row;
+    // EDIT END
     border: calc(var(--border) * 0.5px) solid rgb(60, 255, 0);
     border-left: none;
     border-right: none;
@@ -88,8 +92,10 @@ body {
 
   .shadow {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    padding-right: 50px;
+    left: -23px !important;
+    width: 97%;
+    height: 90%;
     border-radius: 2em;
     top: 0;
     left: 0;
@@ -136,6 +142,7 @@ body {
     bottom: 0;
     right: 0;
     transition: inherit;
+    background-color: rgba(60, 255, 0, 0);
     transition-duration: calc(var(--speed) * 1.25s);
     transform: translateX(calc((var(--width) - var(--height)) * -0.53px))
       rotate(-45deg);
@@ -144,16 +151,17 @@ body {
     &:before,
     &:after {
       transition: transform calc(var(--speed) * 1s) var(--ease);
-      height: calc(var(--height) * 0.5px);
-      width: calc(var(--border) * 0.8px);
+      height: calc(var(--height) * 0.4px);
+      width: calc(var(--border) * 0.6px);
       position: absolute;
       content: '';
       background-color: rgb(60, 255, 0);
       left: calc(var(--border) * -0.5px);
-      bottom: calc(var(--height) * -0.25px);
+      bottom: calc(var(--height) * -0.1px);
     }
   }
 
+  &:hover,
   &:focus-within {
     transform: rotate(0deg) translatey(-10px);
     .center {
@@ -175,13 +183,16 @@ body {
 
     .sticks {
       transition-duration: calc(var(--speed) * 1s);
-      transform: translateX(calc(var(--height) * -0.1px)) translateY(0)
-        rotate(180deg);
+      // PATITA LUPA
       &:before {
         transform: rotate(-45deg);
+        background-color: rgba(94, 255, 0, 0);
+        transition: background-color 60ms ease-out, transform 120ms;
       }
+      // UNA DE LAS BARRAS DE LA X
       &:after {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
+        background-color: rgba(94, 255, 0, 0);
       }
     }
   }
