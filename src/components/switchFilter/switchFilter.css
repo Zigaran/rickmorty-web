@@ -1,10 +1,10 @@
 .switch {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  width: 90px;
-  height: 31px;
+  width: 30%;
+  height: 78%;
   top: 4px;
-  left: 5px;
+  right: -5%;
 }
 
 /* a height le saque 3 pixeles */
@@ -60,7 +60,7 @@ input:checked + .slider:before {
 .slider:after {
   z-index: -1;
   position: relative;
-  content: 'NAME';
+  content: 'Sabri';
   color: rgb(255, 255, 255);
   display: block;
   position: absolute;
@@ -72,5 +72,5 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider:after {
-  content: 'TYPE';
+  content: 'TeAmo';
 }
