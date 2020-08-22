@@ -1,4 +1,17 @@
 .App {
-  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
+  background: url('./utils/backgrounds/home-bg.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
+@media all and (max-width: 525px) {
+  .App {
+    background: url('./utils/backgrounds/phone-bg.jpg') no-repeat center fixed;
+    background-size: cover;
+  }
 }

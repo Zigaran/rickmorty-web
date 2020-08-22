@@ -1,18 +1,25 @@
 .button-container {
   display: flex;
-  width: 33px;
-  height: 33px;
-  background-color: rgba(173, 173, 173, 0.2);
-  border-radius: 30px;
+  width: 50px;
+  height: 50px;
   justify-content: center;
   align-items: center;
   color: rgb(173, 173, 173);
   font-size: 14px;
   align-self: baseline;
-  margin-left: 13px;
-  margin-top: 13px;
-  margin-bottom: 17px;
   position: relative;
+  margin-left: 12px;
+  margin-top: 13px;
+}
+
+.wrapp-menu-icon {
+  display: flex;
+  width: 33px;
+  height: 33px;
+  background-color: rgba(173, 173, 173, 0.2);
+  border-radius: 33px;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-container:hover {

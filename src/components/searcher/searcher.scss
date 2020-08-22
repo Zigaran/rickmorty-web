@@ -69,7 +69,7 @@ body {
     border-left: none;
     border-right: none;
     width: 100%;
-    height: calc(100% - var(--border) * 2px);
+    height: calc(100% - var(--border) * 1.5px);
     transform: scalex(0);
     transition: inherit;
     background-color: var(--color-bk);
@@ -157,7 +157,7 @@ body {
       content: '';
       background-color: rgb(60, 255, 0);
       left: calc(var(--border) * -0.5px);
-      bottom: calc(var(--height) * -0.1px);
+      bottom: calc(var(--height) * -0.15px);
     }
   }
 

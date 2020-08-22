@@ -1,24 +1,47 @@
 .home {
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  background: url('../../utils/backgrounds/home-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .home-content {
   display: flex;
-  flex-grow: 1;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
 }
 
-@media all and (max-width: 525px) {
-  .home {
-    background: url('../../utils/backgrounds/phone-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.home-body {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  grid-template-rows: repeat(4, 260px);
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  width: 100%;
+  overflow-y: hidden;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+@media all and (max-width: 1200px) {
+  .home-body {
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(5, 260px);
+  }
+}
+
+@media all and (max-width: 950px) {
+  .home-body {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(7, 260px);
+  }
+}
+
+@media all and (max-width: 650px) {
+  .home-body {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(10, 260px);
   }
 }

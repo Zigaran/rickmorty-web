@@ -1,32 +1,28 @@
+// APOLLO CLIENT ──────────────────────────────────────────────────────────
 import ApolloClient, { gql } from 'apollo-boost';
-
-interface Props {
-  charName: string;
-}
 
 // CONSTS
 let initialData = {
   fetching: false,
   array: [],
-  current: {},
 };
 
 let client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
 });
 
-let GET_CHARACTERS = 'GET_CHARACTERS';
-let GET_CHARACTERS_SUCCESS = 'GET_CHARACTERS_SUCCESS';
-let GET_CHARACTERS_ERROR = 'GET_CHARACTERS_ERROR';
+let GET_DATA = 'GET_DATA';
+let GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
+let GET_DATA_ERROR = 'GET_DATA_ERROR';
 
 // REDUCER
 export default function reducer(state = initialData, action: any) {
   switch (action.type) {
-    case GET_CHARACTERS:
+    case GET_DATA:
       return { ...state, fetching: true };
-    case GET_CHARACTERS_SUCCESS:
+    case GET_DATA_SUCCESS:
       return { ...state, fetching: false, array: action.payload };
-    case GET_CHARACTERS_ERROR:
+    case GET_DATA_ERROR:
       return { ...state, fetching: false, error: action.payload };
     default:
       return state;
@@ -34,7 +30,10 @@ export default function reducer(state = initialData, action: any) {
 }
 
 // ACTIONS
-export let getCharacterAction = () => (dispatch: any, getState: any) => {
+export let getCharacterAction = (char: string) => (
+  dispatch: any,
+  getState: any
+) => {
   let query = gql`
     query searchCharactersByName($char: String) {
       characters(page: 1, filter: { name: $char }) {
@@ -53,12 +52,14 @@ export let getCharacterAction = () => (dispatch: any, getState: any) => {
     }
   `;
 
+  // getCharacterAction()(store.dispatch, store.getState);
+
   let variables = {
-    char: 'rick sanchez',
+    char,
   };
 
   dispatch({
-    type: GET_CHARACTERS,
+    type: GET_DATA,
   });
 
   return client

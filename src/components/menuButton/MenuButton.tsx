@@ -9,7 +9,9 @@ interface Props {
 let MenuButton = ({ onClick }: Props) => {
   return (
     <div className="button-container" onClick={onClick}>
-      <MenuIcon />
+      <div className="wrapp-menu-icon">
+        <MenuIcon />
+      </div>
     </div>
   );
 };

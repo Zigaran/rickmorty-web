@@ -9,7 +9,12 @@ import './searcher.scss';
 import SwitchFilter from '../switchFilter';
 
 interface Props {
-  changeFilter: any;
+  changeFilter?: any;
+  filterType?: boolean;
+  charFilter?: boolean;
+  locationFilter?: boolean;
+  byNameOrType?: string;
+  entitie?: string;
 }
 
 class Searcher extends React.Component<Props> {
@@ -19,7 +24,20 @@ class Searcher extends React.Component<Props> {
   }
 
   render() {
-    let { changeFilter } = this.props;
+    let {
+      changeFilter,
+      filterType,
+      byNameOrType,
+      charFilter,
+      locationFilter,
+      entitie,
+    } = this.props;
+    filterType ? (byNameOrType = 'name') : (byNameOrType = 'type');
+    charFilter
+      ? (entitie = 'characters')
+      : locationFilter
+      ? (entitie = 'locations')
+      : (entitie = 'episodes');
     return (
       <label id="searcher" className="input-container">
         <div className="shadow" />
@@ -28,7 +46,7 @@ class Searcher extends React.Component<Props> {
             id="intext"
             type="text"
             className="input"
-            placeholder="Search characters/locations"
+            placeholder={`search ${entitie} by ${byNameOrType}...`}
           />
           <div className="align" onClick={this.stillOnFocus}>
             <SwitchFilter onClick={() => changeFilter()} />
@@ -41,7 +59,11 @@ class Searcher extends React.Component<Props> {
 }
 
 function mapState(state: any) {
-  return {};
+  return {
+    filterType: state.menuFilter.byName,
+    charFilter: state.menuFilter.charsMenuItem,
+    locationFilter: state.menuFilter.locationsMenuItem,
+  };
 }
 
 export default connect(mapState, { changeFilter })(Searcher);

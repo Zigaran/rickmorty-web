@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 // REDUCERS
 import sidebarReducer from './sidebarDuck';
-import charsReducer, { getCharacterAction } from './charsDuck';
+import charsReducer from './searchMachineDuck';
 import filterReducer from './filterDuck';
 
 declare global {
@@ -40,6 +40,5 @@ export default function generateStore() {
     rootReducer,
     composeEnhancers(applyMiddleware(thunk))
   );
-  getCharacterAction()(store.dispatch, store.getState);
   return store;
 }
