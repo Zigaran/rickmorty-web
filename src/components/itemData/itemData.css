@@ -13,7 +13,6 @@
   width: 90%;
   height: 80%;
   object-fit: contain;
-  opacity: 80%;
 }
 
 .item-text {
@@ -35,8 +34,4 @@
 .item-data:active {
   transform: scale(1);
   transition: transform 0s;
-}
-
-.item-data:hover .image {
-  opacity: 90%;
 }
