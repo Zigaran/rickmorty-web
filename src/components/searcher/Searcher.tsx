@@ -1,9 +1,15 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
+
+// REDUX ──────────────────────────────────────────────────────────
+import { connect } from 'react-redux';
+import { changeFilter } from '../../redux/filterDuck';
+
 import './searcher.scss';
 import SwitchFilter from '../switchFilter';
 
 interface Props {
-  e?: any;
+  changeFilter: any;
 }
 
 class Searcher extends React.Component<Props> {
@@ -13,8 +19,9 @@ class Searcher extends React.Component<Props> {
   }
 
   render() {
+    let { changeFilter } = this.props;
     return (
-      <label id="searcher" className="input-container trolo">
+      <label id="searcher" className="input-container">
         <div className="shadow" />
         <div className="center">
           <input
@@ -24,7 +31,7 @@ class Searcher extends React.Component<Props> {
             placeholder="Search characters/locations"
           />
           <div className="align" onClick={this.stillOnFocus}>
-            <SwitchFilter />
+            <SwitchFilter onClick={() => changeFilter()} />
           </div>
         </div>
         <div className="sticks" />
@@ -33,4 +40,8 @@ class Searcher extends React.Component<Props> {
   }
 }
 
-export default Searcher;
+function mapState(state: any) {
+  return {};
+}
+
+export default connect(mapState, { changeFilter })(Searcher);

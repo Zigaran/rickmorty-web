@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 // REDUCERS
 import sidebarReducer from './sidebarDuck';
 import charsReducer, { getCharacterAction } from './charsDuck';
-import menuReducer from './menuDuck';
+import filterReducer from './filterDuck';
 
 declare global {
   interface Window {
@@ -17,7 +17,7 @@ declare global {
 let rootReducer = combineReducers({
   sidebarStatuses: sidebarReducer,
   characters: charsReducer,
-  menuFilter: menuReducer,
+  menuFilter: filterReducer,
 });
 
 // --- composeEnhacers ---

@@ -12,7 +12,7 @@ import {
   charFilterActive,
   locationsFilterActive,
   episodesFilterActive,
-} from '../../redux/menuDuck';
+} from '../../redux/filterDuck';
 
 // SIDEBAR ──────────────────────────────────────────────────────
 import {

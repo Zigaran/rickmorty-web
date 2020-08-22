@@ -2,11 +2,13 @@
 let CHARACTERS_STATUS_MENU = 'CHARACTERS_STATUS_MENU';
 let LOCATIONS_STATUS_MENU = 'LOCATIONS_STATUS_MENU';
 let EPISODES_STATUS_MENU = 'EPISODES_STATUS_MENU';
+let SWITCH_FILTER = 'SWITCH_FILTER';
 
 let initialData = {
   charsMenuItem: true,
   locationsMenuItem: false,
   episodesMenuItem: false,
+  byName: true,
 };
 
 // REDUCERS
@@ -33,6 +35,8 @@ export default function reducer(state = initialData, action: any) {
         locationsMenuItem: false,
         episodesMenuItem: true,
       };
+    case SWITCH_FILTER:
+      return { ...state, byName: action.payload };
     default:
       return state;
   }
@@ -53,5 +57,13 @@ export let locationsFilterActive = () => (dispatch: any, getState: any) => {
 export let episodesFilterActive = () => (dispatch: any, getState: any) => {
   dispatch({
     type: EPISODES_STATUS_MENU,
+  });
+};
+
+export let changeFilter = () => (dispatch: any, getState: any) => {
+  let { byName } = getState().menuFilter;
+  dispatch({
+    type: SWITCH_FILTER,
+    payload: !byName,
   });
 };
