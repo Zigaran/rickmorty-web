@@ -4,12 +4,14 @@ import React from 'react';
 // REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/filterDuck';
+import { getInput } from '../../redux/searchMachineDuck';
 
 import './searcher.scss';
 import SwitchFilter from '../switchFilter';
 
 interface Props {
   changeFilter?: any;
+  getInput: any;
   filterType?: boolean;
   charFilter?: boolean;
   locationFilter?: boolean;
@@ -31,6 +33,7 @@ class Searcher extends React.Component<Props> {
       charFilter,
       locationFilter,
       entitie,
+      getInput,
     } = this.props;
     filterType ? (byNameOrType = 'name') : (byNameOrType = 'type');
     charFilter
@@ -47,6 +50,7 @@ class Searcher extends React.Component<Props> {
             type="text"
             className="input"
             placeholder={`search ${entitie} by ${byNameOrType}...`}
+            onChange={(event) => getInput(event.target.value)}
           />
           <div className="align" onClick={this.stillOnFocus}>
             <SwitchFilter onClick={() => changeFilter()} />
@@ -66,4 +70,4 @@ function mapState(state: any) {
   };
 }
 
-export default connect(mapState, { changeFilter })(Searcher);
+export default connect(mapState, { changeFilter, getInput })(Searcher);
