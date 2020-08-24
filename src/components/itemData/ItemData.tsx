@@ -9,13 +9,9 @@ interface Props {
 let ItemData = ({ name, image }: Props) => {
   return (
     <div className="item-data">
-      <img
-        src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-        className="image"
-        alt="pic-from-api"
-      />
+      <img src={image} className="image" alt="pic-from-api" />
       <div className="item-text">
-        <h4 className="text-h4">Morty Smith</h4>
+        <h4 className="text-h4">{name}</h4>
       </div>
     </div>
   );

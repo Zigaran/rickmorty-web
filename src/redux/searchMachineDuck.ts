@@ -4,7 +4,9 @@ import ApolloClient, { gql } from 'apollo-boost';
 // CONSTS
 let initialData = {
   fetching: false,
-  array: [],
+  info: {},
+  data: [],
+  error: '',
 };
 
 let client = new ApolloClient({
@@ -21,7 +23,12 @@ export default function reducer(state = initialData, action: any) {
     case GET_DATA:
       return { ...state, fetching: true };
     case GET_DATA_SUCCESS:
-      return { ...state, fetching: false, array: action.payload };
+      return {
+        ...state,
+        fetching: false,
+        data: action.payload.characters.results,
+        info: action.payload.info,
+      };
     case GET_DATA_ERROR:
       return { ...state, fetching: false, error: action.payload };
     default:
@@ -68,9 +75,16 @@ export let getCharacterAction = (char: string) => (
       variables,
     })
     .then((res) => {
-      console.log(res);
+      dispatch({
+        type: GET_DATA_SUCCESS,
+        payload: res.data,
+      });
     })
     .catch((err) => {
+      dispatch({
+        type: GET_DATA_ERROR,
+        payload: err.error.errors.message,
+      });
       console.log(err);
     });
 };
