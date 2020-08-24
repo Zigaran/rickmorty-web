@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/filterDuck';
-import { getInput } from '../../redux/searchMachineDuck';
+import { getInput } from '../../redux/charsDuck';
 
 import './searcher.scss';
 import SwitchFilter from '../switchFilter';

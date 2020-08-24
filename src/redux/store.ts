@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 // REDUCERS
 import sidebarReducer from './sidebarDuck';
-import charsReducer, { getInput } from './searchMachineDuck';
+import charsReducer, { getInput } from './charsDuck';
 import filterReducer from './filterDuck';
 
 declare global {
