@@ -1,4 +1,7 @@
 .prosidebar-container {
   height: 100%;
   width: 100%;
+  z-index: 500;
+  position: sticky;
+  top: 0;
 }

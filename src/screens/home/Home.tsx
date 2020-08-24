@@ -15,9 +15,11 @@ let Home = ({ changeToggledStatus }: Props) => {
     <div className="home">
       <div className="home-content">
         <MenuButton onClick={() => changeToggledStatus()} />
-        <Searcher />
 
         <PerfectScrollbar className="home-body">
+          <div className="searcher-grid">
+            <Searcher />
+          </div>
           <ItemData />
           <ItemData />
           <ItemData />

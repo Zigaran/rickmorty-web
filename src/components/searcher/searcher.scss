@@ -69,7 +69,7 @@ body {
     border-left: none;
     border-right: none;
     width: 100%;
-    height: calc(100% - var(--border) * 1.5px);
+    height: calc(100% - var(--border) * 2px);
     transform: scalex(0);
     transition: inherit;
     background-color: var(--color-bk);
@@ -195,15 +195,5 @@ body {
         background-color: rgba(94, 255, 0, 0);
       }
     }
-  }
-}
-
-// .align {
-//   padding-left: 1.5%;
-// }
-
-@media all and (min-width: 769px) {
-  .input-container {
-    margin-top: 40px;
   }
 }
