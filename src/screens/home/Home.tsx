@@ -1,6 +1,12 @@
 import React from 'react';
 import './home.css';
-import { Searcher, MenuButton, ItemData, Loader } from '../../components';
+import {
+  Searcher,
+  MenuButton,
+  ItemData,
+  Loader,
+  ModalPopup,
+} from '../../components';
 import { connect } from 'react-redux';
 import { changeToggledStatus } from '../../redux/sidebarDuck';
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -15,16 +21,18 @@ interface Props {
 let Home = ({ changeToggledStatus, chars, loading }: Props) => {
   console.log(chars);
 
-  let results = chars.data.map((char: any) => (
+  let results = chars.data.map((char: any, i: any) => (
     <ItemData
       name={char.name}
       image={char.image}
       dimension={char.dimension}
       episode={char.episode}
+      key={i}
     />
   ));
   return (
     <div className="home">
+      <ModalPopup />
       <div className="home-content">
         <MenuButton onClick={() => changeToggledStatus()} />
         <PerfectScrollbar className="home-body">

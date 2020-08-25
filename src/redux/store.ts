@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import sidebarReducer from './sidebarDuck';
 import charsReducer, { getInput } from './charsDuck';
 import filterReducer from './filterDuck';
+import modalStatus from './modalDuck';
 
 declare global {
   interface Window {
@@ -18,6 +19,7 @@ let rootReducer = combineReducers({
   sidebarStatuses: sidebarReducer,
   characters: charsReducer,
   menuFilter: filterReducer,
+  modalStatus: modalStatus,
 });
 
 // --- composeEnhacers ---

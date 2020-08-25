@@ -1,16 +1,29 @@
 import React from 'react';
 import './itemData.css';
+import { changeModalStatus } from '../../redux/modalDuck';
+import { connect } from 'react-redux';
 
 interface Props {
   name?: string;
   image?: string;
   dimension?: string;
   episode?: string;
+  id?: any;
+  changeModalStatus?: any;
 }
 
-let ItemData = ({ name, image, dimension, episode }: Props) => {
+let ItemData = ({
+  name,
+  image,
+  dimension,
+  episode,
+  id,
+  changeModalStatus,
+}: Props) => {
+  let ID = id;
   return (
-    <div>
+    <div key={ID} onClick={() => changeModalStatus()}>
+      {console.log(ID)}
       {image ? (
         <div className="item-data">
           <img src={image} className="image" alt="pic-from-api" />
@@ -41,4 +54,8 @@ let ItemData = ({ name, image, dimension, episode }: Props) => {
   );
 };
 
-export default ItemData;
+function mapState(state: any) {
+  return {};
+}
+
+export default connect(mapState, { changeModalStatus })(ItemData);
