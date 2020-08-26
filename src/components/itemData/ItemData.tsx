@@ -1,6 +1,6 @@
 import React from 'react';
 import './itemData.css';
-import { changeModalStatus } from '../../redux/modalDuck';
+import { changeModalStatus, storeActualObject } from '../../redux/modalDuck';
 import { connect } from 'react-redux';
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
   episode?: string;
   id?: any;
   changeModalStatus?: any;
+  storeActualObject?: any;
+  actualObject?: object;
 }
 
 let ItemData = ({
@@ -19,11 +21,18 @@ let ItemData = ({
   episode,
   id,
   changeModalStatus,
+  storeActualObject,
+  actualObject,
 }: Props) => {
-  let ID = id;
+  async function onClickItem() {
+    await storeActualObject(actualObject);
+    changeModalStatus();
+    console.log(actualObject);
+  }
+
   return (
-    <div key={ID} onClick={() => changeModalStatus()}>
-      {console.log(ID)}
+    <div key={id} onClick={onClickItem}>
+      {console.log(id)}
       {image ? (
         <div className="item-data">
           <img src={image} className="image" alt="pic-from-api" />
@@ -58,4 +67,6 @@ function mapState(state: any) {
   return {};
 }
 
-export default connect(mapState, { changeModalStatus })(ItemData);
+export default connect(mapState, { changeModalStatus, storeActualObject })(
+  ItemData
+);

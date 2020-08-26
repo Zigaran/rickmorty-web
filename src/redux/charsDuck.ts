@@ -95,6 +95,7 @@ export let getCharacterAction = (char?: string) => (
             pages
           }
           results {
+            id
             name
             species
             type
@@ -113,6 +114,7 @@ export let getCharacterAction = (char?: string) => (
             pages
           }
           results {
+            id
             name
             species
             type
@@ -163,11 +165,13 @@ let getLocationsAction = (char: string) => (dispatch: any, getState: any) => {
             pages
           }
           results {
+            id
             name
             type
             dimension
             residents {
               name
+              image
             }
           }
         }
@@ -182,11 +186,13 @@ let getLocationsAction = (char: string) => (dispatch: any, getState: any) => {
             pages
           }
           results {
+            id
             name
             type
             dimension
             residents {
               name
+              image
             }
           }
         }
@@ -221,7 +227,6 @@ let getLocationsAction = (char: string) => (dispatch: any, getState: any) => {
         type: GET_DATA_ERROR,
         payload: err.message,
       });
-      console.log('esto es dentro de error' + err);
     });
 };
 
@@ -234,11 +239,13 @@ let getEpisodesAction = (char: string) => (dispatch: any, getState: any) => {
           pages
         }
         results {
+          id
           name
           air_date
           episode
           characters {
             name
+            image
           }
         }
       }

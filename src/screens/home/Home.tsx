@@ -21,13 +21,14 @@ interface Props {
 let Home = ({ changeToggledStatus, chars, loading }: Props) => {
   console.log(chars);
 
-  let results = chars.data.map((char: any, i: any) => (
+  let results = chars.data.map((char: any) => (
     <ItemData
       name={char.name}
       image={char.image}
       dimension={char.dimension}
       episode={char.episode}
-      key={i}
+      key={char.id}
+      actualObject={char}
     />
   ));
   return (

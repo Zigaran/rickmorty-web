@@ -8,25 +8,13 @@ Modal.setAppElement('#root');
 
 interface Props {
   modalStatus?: any;
-  name?: string;
-  type?: string;
-  genre?: string;
-  species?: string;
   changeModalStatus?: any;
+  actualObject?: any;
 }
 
-let ModalPopup = ({
-  modalStatus,
-  name,
-  type,
-  genre,
-  species,
-  changeModalStatus,
-}: Props) => {
-  name = 'Rick Sanchez';
-  type = 'humano cientifico';
-  genre = 'masculino';
-  species = 'humano';
+let ModalPopup = ({ modalStatus, changeModalStatus, actualObject }: Props) => {
+  let { name, image, species, gender, type } = actualObject;
+  let unknown = 'unknown';
   return (
     <Modal
       isOpen={modalStatus}
@@ -48,11 +36,7 @@ let ModalPopup = ({
           />
         </div>
         <div className="modal-image-container">
-          <img
-            className="modal-image"
-            src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-            alt="from-api"
-          />
+          <img className="modal-image" src={image} alt="from-api" />
         </div>
         <div className="modal-text">
           <h2 className="modal-name-text">{name}</h2>
@@ -60,15 +44,17 @@ let ModalPopup = ({
         <div className="data-cont">
           <div className="modal-text pad-left">
             <h2 className="modal-title">Type</h2>
-            <h2 className="center-text type">{type}</h2>
+            <h2 className="center-text type">{type ? type : unknown}</h2>
           </div>
           <div className="modal-text pad-left">
-            <h2 className="modal-title">Genre</h2>
-            <h2 className="center-text genre">{genre}</h2>
+            <h2 className="modal-title">Gender</h2>
+            <h2 className="center-text genre">{gender ? gender : unknown}</h2>
           </div>
           <div className="modal-text pad-left">
             <h2 className="modal-title">Specie</h2>
-            <h2 className="center-text species">{species}</h2>
+            <h2 className="center-text species">
+              {species ? species : unknown}
+            </h2>
           </div>
         </div>
       </div>
@@ -79,6 +65,7 @@ let ModalPopup = ({
 function mapState(state: any) {
   return {
     modalStatus: state.modalStatus.open,
+    actualObject: state.modalStatus.data,
   };
 }
 
