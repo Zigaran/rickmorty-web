@@ -27,7 +27,6 @@ let ItemData = ({
   async function onClickItem() {
     await storeActualObject(actualObject);
     changeModalStatus();
-    console.log(actualObject);
   }
 
   return (

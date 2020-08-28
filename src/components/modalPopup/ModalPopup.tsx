@@ -1,10 +1,15 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
-import Modal from 'react-modal';
+
+// REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
 import { changeModalStatus } from '../../redux/modalDuck';
-import './modalPopup.css';
 
-Modal.setAppElement('#root');
+// STYLES & COMPONENTS ────────────────────────────────────────────
+import CharsModal from '../charsModal';
+import Modal from 'react-modal';
+import LocatEpisModal from '../locatEpisModal';
+import './modalPopup.css';
 
 interface Props {
   modalStatus?: any;
@@ -12,9 +17,13 @@ interface Props {
   actualObject?: any;
 }
 
+Modal.setAppElement('#root');
+
 let ModalPopup = ({ modalStatus, changeModalStatus, actualObject }: Props) => {
-  let { name, image, species, gender, type } = actualObject;
-  let unknown = 'unknown';
+  // INITIALIZING CONSTS ────────────────────────────────────────────
+  let { dimension, episode } = actualObject;
+  // ──> end <──
+
   return (
     <Modal
       isOpen={modalStatus}
@@ -35,28 +44,8 @@ let ModalPopup = ({ modalStatus, changeModalStatus, actualObject }: Props) => {
             onClick={() => changeModalStatus()}
           />
         </div>
-        <div className="modal-image-container">
-          <img className="modal-image" src={image} alt="from-api" />
-        </div>
-        <div className="modal-text">
-          <h2 className="modal-name-text">{name}</h2>
-        </div>
-        <div className="data-cont">
-          <div className="modal-text pad-left">
-            <h2 className="modal-title">Type</h2>
-            <h2 className="center-text type">{type ? type : unknown}</h2>
-          </div>
-          <div className="modal-text pad-left">
-            <h2 className="modal-title">Gender</h2>
-            <h2 className="center-text genre">{gender ? gender : unknown}</h2>
-          </div>
-          <div className="modal-text pad-left">
-            <h2 className="modal-title">Specie</h2>
-            <h2 className="center-text species">
-              {species ? species : unknown}
-            </h2>
-          </div>
-        </div>
+
+        {dimension || episode ? <LocatEpisModal /> : <CharsModal />}
       </div>
     </Modal>
   );
