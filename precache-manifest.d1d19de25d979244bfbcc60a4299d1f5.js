@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "83f7a4395ebabe3b3fbb8cd05fb086ea",
+    "revision": "b0643d658dd14c926b15e692a4246bb7",
     "url": "/rickmorty-web/index.html"
   },
   {
-    "revision": "f62f3bc2e3fcfe949606",
+    "revision": "0fb3c833b2770e3c61a3",
     "url": "/rickmorty-web/static/css/2.18fb2ca0.chunk.css"
   },
   {
-    "revision": "6071976628c69c6467e7",
-    "url": "/rickmorty-web/static/css/main.0551e8a9.chunk.css"
+    "revision": "28b97312f3944f5570c1",
+    "url": "/rickmorty-web/static/css/main.22ebe8a7.chunk.css"
   },
   {
-    "revision": "f62f3bc2e3fcfe949606",
-    "url": "/rickmorty-web/static/js/2.809ae89d.chunk.js"
+    "revision": "0fb3c833b2770e3c61a3",
+    "url": "/rickmorty-web/static/js/2.9f1ef392.chunk.js"
   },
   {
     "revision": "58a049feef781e04f2dc45d68b0c2f60",
-    "url": "/rickmorty-web/static/js/2.809ae89d.chunk.js.LICENSE.txt"
+    "url": "/rickmorty-web/static/js/2.9f1ef392.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6071976628c69c6467e7",
-    "url": "/rickmorty-web/static/js/main.2edf2bb3.chunk.js"
+    "revision": "28b97312f3944f5570c1",
+    "url": "/rickmorty-web/static/js/main.323700a5.chunk.js"
   },
   {
     "revision": "bc3f5e3652d2560f32c5",
