@@ -6,6 +6,7 @@ export { default as LocatEpisModal } from './locatEpisModal';
 export { default as MenuButton } from './menuButton';
 export { default as ModalItemGrid } from './modalItemGrid';
 export { default as ModalPopup } from './modalPopup';
+export { default as PageButton } from './pageButton';
 export { default as Searcher } from './searcher';
 export { default as SidebarFootItem } from './sidebarFootItem';
 export { default as SidebarHeadItem } from './sidebarHeadItem';

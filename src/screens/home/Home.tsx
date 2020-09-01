@@ -6,20 +6,25 @@ import {
   ItemData,
   Loader,
   ModalPopup,
+  PageButton,
 } from '../../components';
 import { connect } from 'react-redux';
 import { changeToggledStatus } from '../../redux/sidebarDuck';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import swal from 'sweetalert';
 
 interface Props {
   changeToggledStatus?: any;
   loading?: boolean;
+  error?: any;
   chars?: any;
 }
 
-let Home = ({ changeToggledStatus, chars, loading }: Props) => {
-  console.log(chars);
+let Home = ({ changeToggledStatus, chars, loading, error }: Props) => {
+  if (error) {
+    swal('Sorry :(', 'Not Found', 'error');
+  }
 
   let results = chars.data.map((char: any) => (
     <ItemData
@@ -45,6 +50,7 @@ let Home = ({ changeToggledStatus, chars, loading }: Props) => {
           ) : (
             results
           )}
+          <PageButton />
         </PerfectScrollbar>
       </div>
     </div>
@@ -54,6 +60,7 @@ let Home = ({ changeToggledStatus, chars, loading }: Props) => {
 function mapState(state: any) {
   return {
     chars: state.characters,
+    error: state.characters.error,
     loading: state.characters.fetching,
   };
 }

@@ -1,0 +1,113 @@
+.page-button-grid {
+  display: grid;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.page-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -200px;
+  font-size: 13px;
+}
+
+.page-button-container h2 {
+  font-weight: lighter;
+}
+
+.prev-button {
+  color: rgb(177, 110, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left-width: 2px;
+  border-left-color: rgb(132, 0, 255);
+  border-left-style: solid;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.next-button {
+  color: rgb(160, 236, 112);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left-width: 1px;
+  border-left-color: rgba(255, 255, 255, 0.356);
+  border-left-style: solid;
+  border-right-width: 2px;
+  border-right-color: rgb(102, 255, 0);
+  border-right-style: solid;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev-display {
+  display: none;
+}
+
+.next-display {
+  display: none;
+}
+
+.page-button-container:hover {
+  cursor: pointer;
+}
+
+.prev-button:hover {
+  background-color: rgba(41, 0, 46, 0.85);
+  box-shadow: 0px 10px 50px 0px rgba(225, 0, 255, 0.274);
+  transition: all 200ms;
+}
+
+.next-button:hover {
+  background-color: rgba(17, 46, 0, 0.85);
+  box-shadow: 0px 10px 50px 0px rgba(94, 255, 0, 0.226);
+  transition: all 200ms;
+}
+
+.prev-button:active {
+  color: rgb(191, 147, 231);
+  border-left-color: rgb(172, 92, 247);
+  background-color: rgba(59, 32, 63, 0.85);
+  transition: all 0s;
+}
+
+.next-button:active {
+  color: rgb(193, 226, 173);
+  background-color: rgba(58, 78, 47, 0.85);
+  transition: all 0s;
+}
+
+@media all and (max-width: 1200px) {
+  .page-button-container {
+    margin-left: -110%;
+  }
+}
+
+@media all and (max-width: 950px) {
+  .page-button-grid {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .page-button-container {
+    margin-left: 0;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .page-button-container {
+    margin-left: -110%;
+  }
+}

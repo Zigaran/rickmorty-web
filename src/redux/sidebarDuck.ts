@@ -4,7 +4,7 @@ let CHANGE_SIDEBAR_HIDDEN_STATUS = 'SIDEBAR_HIDDEN_STATUS';
 
 let sidebarStatuses = {
   toggled: false,
-  hidden: true,
+  hidden: false,
 };
 
 // REDUCERS
