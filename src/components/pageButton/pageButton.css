@@ -1,18 +1,20 @@
 .page-button-grid {
   display: grid;
+  font-size: 13px;
   grid-column-start: 3;
   grid-column-end: 4;
   position: sticky;
   bottom: 0;
   z-index: 1;
+  align-items: flex-end;
 }
 
 .page-button-container {
   display: flex;
+  height: 30%;
   justify-content: center;
-  align-items: center;
-  margin-bottom: -120%;
   font-size: 13px;
+  margin-bottom: -50%;
 }
 
 .page-button-container h2 {
