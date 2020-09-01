@@ -17,6 +17,7 @@ interface Props {
   locationFilter?: boolean;
   byNameOrType?: string;
   entitie?: string;
+  inputValue?: string;
 }
 
 class Searcher extends React.Component<Props> {
@@ -34,6 +35,7 @@ class Searcher extends React.Component<Props> {
       locationFilter,
       entitie,
       getInput,
+      inputValue,
     } = this.props;
     filterType ? (byNameOrType = 'name') : (byNameOrType = 'type');
     charFilter
@@ -51,6 +53,7 @@ class Searcher extends React.Component<Props> {
             className="input"
             placeholder={`search ${entitie} by ${byNameOrType}...`}
             onChange={(event) => getInput(event.target.value)}
+            value={inputValue}
           />
           <div className="align" onClick={this.stillOnFocus}>
             <SwitchFilter onClick={() => changeFilter()} />
@@ -67,6 +70,7 @@ function mapState(state: any) {
     filterType: state.menuFilter.byName,
     charFilter: state.menuFilter.charsMenuItem,
     locationFilter: state.menuFilter.locationsMenuItem,
+    inputValue: state.characters.input,
   };
 }
 

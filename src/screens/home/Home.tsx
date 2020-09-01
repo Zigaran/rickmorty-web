@@ -13,17 +13,25 @@ import { changeToggledStatus } from '../../redux/sidebarDuck';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import swal from 'sweetalert';
+import { clearData } from '../../redux/charsDuck';
 
 interface Props {
   changeToggledStatus?: any;
+  clearData?: any;
   loading?: boolean;
   error?: any;
   chars?: any;
 }
 
-let Home = ({ changeToggledStatus, chars, loading, error }: Props) => {
+let Home = ({
+  changeToggledStatus,
+  clearData,
+  chars,
+  loading,
+  error,
+}: Props) => {
   if (error) {
-    swal('Sorry :(', 'Not Found', 'error');
+    swal('Sorry :(', 'Not Found', 'error').then(clearData());
   }
 
   let results = chars.data.map((char: any) => (
@@ -65,4 +73,4 @@ function mapState(state: any) {
   };
 }
 
-export default connect(mapState, { changeToggledStatus })(Home);
+export default connect(mapState, { changeToggledStatus, clearData })(Home);

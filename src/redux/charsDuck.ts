@@ -59,7 +59,7 @@ export default function reducer(state = initialData, action: any) {
         next: action.payload.info.next,
       };
     case GET_DATA_ERROR:
-      return { ...state, fetching: false, error: action.payload };
+      return { ...state, fetching: false, error: action.payload, input: '' };
     case CLEAR_DATA:
       return { ...state, error: '', data: action.payload };
     default:
@@ -69,12 +69,16 @@ export default function reducer(state = initialData, action: any) {
 
 // ACTIONS
 
+export let clearData = () => (dispatch: any, getState: any) => {
+  dispatch({
+    type: CLEAR_DATA,
+    payload: [],
+  });
+};
+
 export let getInput = (input: string) => (dispatch: any, getState: any) => {
   if (input === '') {
-    dispatch({
-      type: CLEAR_DATA,
-      payload: [],
-    });
+    clearData()(dispatch, getState);
   }
 
   dispatch({
