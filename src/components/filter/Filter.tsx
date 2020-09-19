@@ -69,7 +69,7 @@ function Filter({
       <SidebarContent>
         <Menu iconShape="circle">
           <SidebarHeadItem
-            text="Menu Filter"
+            text="Filter Menu"
             onClick={() => changeHiddenStatus(width)}
           />
           <Space />

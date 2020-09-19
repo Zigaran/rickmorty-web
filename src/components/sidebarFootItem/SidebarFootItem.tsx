@@ -1,4 +1,7 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
+
+// STYLES & UTILS ─────────────────────────────────────────────────
 import { PuzzleIcon } from '../../utils/icons/Icons';
 import './sidebarFootItem.css';
 

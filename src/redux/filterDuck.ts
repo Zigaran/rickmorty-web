@@ -1,3 +1,6 @@
+// ACTIONS IMPORTS
+import { clearData } from './charsDuck';
+
 // CONSTS
 let CHARACTERS_STATUS_MENU = 'CHARACTERS_STATUS_MENU';
 let LOCATIONS_STATUS_MENU = 'LOCATIONS_STATUS_MENU';
@@ -43,18 +46,24 @@ export default function reducer(state = initialData, action: any) {
 }
 
 export let charFilterActive = () => (dispatch: any, getState: any) => {
+  clearData()(dispatch, getState);
+
   dispatch({
     type: CHARACTERS_STATUS_MENU,
   });
 };
 
 export let locationsFilterActive = () => (dispatch: any, getState: any) => {
+  clearData()(dispatch, getState);
+
   dispatch({
     type: LOCATIONS_STATUS_MENU,
   });
 };
 
 export let episodesFilterActive = () => (dispatch: any, getState: any) => {
+  clearData()(dispatch, getState);
+
   dispatch({
     type: EPISODES_STATUS_MENU,
   });

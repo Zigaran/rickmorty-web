@@ -27,6 +27,7 @@ let ModalPopup = ({ modalStatus, changeModalStatus, actualObject }: Props) => {
   return (
     <Modal
       isOpen={modalStatus}
+      onRequestClose={() => changeModalStatus()}
       className="overlay modal-content"
       style={{
         overlay: {
@@ -38,13 +39,6 @@ let ModalPopup = ({ modalStatus, changeModalStatus, actualObject }: Props) => {
       }}
     >
       <div className="modal-container">
-        <div className="close-modal-button">
-          <i
-            className="far fa-times-circle close-button"
-            onClick={() => changeModalStatus()}
-          />
-        </div>
-
         {dimension || episode ? <LocatEpisModal /> : <CharsModal />}
       </div>
     </Modal>

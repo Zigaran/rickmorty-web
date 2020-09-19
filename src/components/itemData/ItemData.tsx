@@ -1,7 +1,12 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
-import './itemData.css';
-import { changeModalStatus, storeActualObject } from '../../redux/modalDuck';
+
+// REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
+import { changeModalStatus, storeActualObject } from '../../redux/modalDuck';
+
+// STYLES ──────────────────────────────────────────────────────────
+import './itemData.css';
 
 interface Props {
   name?: string;
@@ -31,7 +36,6 @@ let ItemData = ({
 
   return (
     <div key={id} onClick={onClickItem}>
-      {console.log(id)}
       {image ? (
         <div className="item-data">
           <img src={image} className="image" alt="pic-from-api" />

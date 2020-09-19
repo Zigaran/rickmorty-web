@@ -1,6 +1,13 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
+
+// REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
+
+// COMPONENTS ─────────────────────────────────────────────────────
 import ModalItemGrid from '../modalItemGrid';
+
+// STYLES ─────────────────────────────────────────────────────────
 import '../modalPopup/modalPopup.css';
 
 interface Props {

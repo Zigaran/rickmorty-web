@@ -1,7 +1,12 @@
+// REACT ──────────────────────────────────────────────────────────
 import React, { useEffect } from 'react';
-import './pageButton.css';
+
+// REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
 import { getMeTheData } from '../../redux/charsDuck';
+
+// STYLES ─────────────────────────────────────────────────────────
+import './pageButton.css';
 
 interface Props {
   error?: any;

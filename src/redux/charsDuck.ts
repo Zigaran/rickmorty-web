@@ -61,7 +61,7 @@ export default function reducer(state = initialData, action: any) {
     case GET_DATA_ERROR:
       return { ...state, fetching: false, error: action.payload, input: '' };
     case CLEAR_DATA:
-      return { ...state, error: '', data: action.payload };
+      return { ...state, error: '', data: action.payload, input: '' };
     default:
       return state;
   }
@@ -236,8 +236,6 @@ let getLocationsAction = (pg: number, char: string) => (
     `;
   }
 
-  console.log(char);
-
   let variables = {
     pg,
     char,
@@ -257,7 +255,6 @@ let getLocationsAction = (pg: number, char: string) => (
         type: GET_LOCATIONS_DATA_SUCCESS,
         payload: res.data.locations,
       });
-      console.log('esto es dentro del dispatch' + res);
     })
     .catch((err) => {
       dispatch({
@@ -313,7 +310,6 @@ let getEpisodesAction = (pg: number, char: string) => (
         type: GET_EPISODES_DATA_SUCCESS,
         payload: res.data.episodes,
       });
-      console.log(res);
     })
     .catch((err) => {
       dispatch({

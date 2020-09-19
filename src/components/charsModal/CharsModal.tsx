@@ -1,6 +1,10 @@
 // REACT ──────────────────────────────────────────────────────────
 import React from 'react';
+
+// REDUX ──────────────────────────────────────────────────────────
 import { connect } from 'react-redux';
+
+// STYLES ─────────────────────────────────────────────────────────
 import '../modalPopup/modalPopup.css';
 
 interface Props {

@@ -1,5 +1,12 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
-import './home.css';
+
+// REDUX ──────────────────────────────────────────────────────────
+import { connect } from 'react-redux';
+import { changeToggledStatus } from '../../redux/sidebarDuck';
+import { clearData } from '../../redux/charsDuck';
+
+// COMPONENTS ─────────────────────────────────────────────────────
 import {
   Searcher,
   MenuButton,
@@ -8,12 +15,12 @@ import {
   ModalPopup,
   PageButton,
 } from '../../components';
-import { connect } from 'react-redux';
-import { changeToggledStatus } from '../../redux/sidebarDuck';
-import 'react-perfect-scrollbar/dist/css/styles.css';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import swal from 'sweetalert';
-import { clearData } from '../../redux/charsDuck';
+
+// STYLES ──────────────────────────────────────────────────────────
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import './home.css';
 
 interface Props {
   changeToggledStatus?: any;

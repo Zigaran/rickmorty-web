@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/filterDuck';
 import { getInput } from '../../redux/charsDuck';
 
-import './searcher.scss';
+// STYLES & COMPONENTS ─────────────────────────────────────────────
 import SwitchFilter from '../switchFilter';
+import './searcher.scss';
 
 interface Props {
   changeFilter?: any;

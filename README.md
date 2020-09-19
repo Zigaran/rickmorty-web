@@ -3,7 +3,7 @@
 [App deployed on GhPages](https://zigaran.github.io/rickmorty-web/).
 
 This App was developed from scratch, using:</br>
-</br>
+
 **React 16.9.0**</br>
 **TypeScript 3.7.2**</br>
 **Redux 4.0.5**</br>

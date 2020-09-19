@@ -1,6 +1,9 @@
+// REACT ──────────────────────────────────────────────────────────
 import React from 'react';
-import './menuButton.css';
+
+// STYLES & UTILS ─────────────────────────────────────────────────
 import { MenuIcon } from '../../utils/icons/Icons';
+import './menuButton.css';
 
 interface Props {
   onClick?: () => void;
